@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: blue;
+        }
+        #container{
+            margin: auto;
+            border: 5px solid lightblue;
+            font-size: 30px;
+            padding: 10px;
+            height: 360px;
+            width: 760px;
+            background-color: #0e2431;
+        }
+        p{
+            color: white;
+        }
+        h2{
+            color: blueviolet;
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <fieldset id="container">
+            <h2>Number guessing game</h2>
+            <p> please enter a number between 0-100</p>
+            <input type="number" id="input">
+            <input type="submit" value="enter" onclick="play()">
+            <input type="button" value="replay" onclick="replay()">
+            <p id="result">............................</p>
+        </fieldset>
+    </center>
+
+    <script>
+        //code to generate random number between 0-100
+        var random= Math.floor(Math.random()*100);
+
+        //logic behind this game
+        function play()
+        {
+            var input = document.getElementById("input").value;
+            //now checking conditions
+            if (input == random)
+            {
+                document.getElementById("result").innerHTML="Congratulations.... you won!";
+                result.style.color="green";
+            }
+            else if (input > random)
+            {
+                document.getElementById("result").innerHTML="sorry..... your guess is high!";
+                result.style.color="red";
+            }
+            else
+            {
+                document.getElementById("result").innerHTML="sorry..... your guess is low!";
+                result.style.color="red";
+            }
+        }
+
+        //code for replay the game
+        function replay()
+        {
+            location.reload();
+        }
+    </script>
+</body>
+</html>
